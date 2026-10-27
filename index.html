@@ -1,13 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Game</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Drop by Drop | Clean Water Runner Game</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Welcome to the Charity Water Game Prototype</h1>
-    <script src="script.js"></script>
+  <main class="container">
+    <header>
+      <p class="eyebrow">Inspired by charity: water</p>
+      <h1>Drop by Drop 💧</h1>
+      <p>Collect clean water, avoid pollution, and reach the water goal!</p>
+    </header>
+
+    <section class="stats" aria-label="Game stats">
+      <div>Score <strong id="score">0</strong></div>
+      <div>Time <strong id="time">60</strong>s</div>
+      <div>Water <strong id="water">0</strong>/10</div>
+    </section>
+
+    <div class="meter" aria-label="Water collection progress">
+      <div id="meterFill"></div>
+    </div>
+
+    <section class="game" id="game" aria-label="Runner game area" tabindex="0">
+      <div class="sun"></div>
+      <div id="player" class="player" aria-label="Player">🚶</div>
+      <div class="ground"></div>
+      <div id="overlay" class="overlay">
+        <h2 id="overlayTitle">Ready to run?</h2>
+        <p id="overlayText">
+          Jump to collect drops and avoid hazards. Collect 10 clean drops before time runs out!
+        </p>
+      </div>
+      <div id="confetti" class="confetti" aria-hidden="true"></div>
+    </section>
+
+    <p id="feedback" class="feedback" role="status" aria-live="polite">Press Start Game to begin.</p>
+
+    <div class="controls">
+      <button id="startBtn">Start Game</button>
+      <button id="pauseBtn" disabled>Pause</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <div class="controls movement">
+      <button id="jumpBtn">↑ Jump</button>
+      <button id="duckBtn">↓ Duck</button>
+    </div>
+
+    <p class="instructions">Keyboard: Space / ↑ to jump, ↓ to duck. On mobile, use the buttons. Blue drops give +10 points; polluted drops and obstacles cost 10 points.</p>
+
+    <footer>
+      Learn about clean water access at
+      <a href="https://www.charitywater.org/" target="_blank" rel="noopener noreferrer">charity: water</a>.
+    </footer>
+  </main>
 </body>
 </html>
